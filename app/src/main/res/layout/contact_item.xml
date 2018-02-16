@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<ImageView
+    android:layout_marginLeft="20dp"
+    android:layout_width="70dp"
+    android:layout_marginRight="15dp"
+    android:layout_height="70dp"
+    android:id="@+id/contact_thumb"
+    android:src="@drawable/ic_person_black_24dp"
+    />
+    <TextView
+        android:id="@+id/contact_name"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/black"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_toRightOf="@+id/contact_thumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Nsikak Thompson"/>
+    <TextView
+        android:layout_marginTop="4dp"
+        android:id="@+id/contact_phone"
+        android:layout_below="@+id/contact_name"
+        android:layout_toRightOf="@+id/contact_thumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="07016898349"/>
+
+
+</RelativeLayout>
