@@ -33,7 +33,7 @@ android {
 }
 
 ext {
-    arch_version = '1.0.0-alpha5'
+    arch_version = '1.1.0'
     arch_runtime = '1.1.0-alpha2'
     dagger_version = "2.11"
     supportLibraryVersion = "26.1.0"
@@ -90,7 +90,7 @@ dependencies {
     })
 
     annotationProcessor "com.google.dagger:dagger-compiler:${dagger_version}"
-    annotationProcessor "android.arch.lifecycle:compiler:${arch_version}"
-    annotationProcessor "android.arch.persistence.room:compiler:${arch_version}"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.0"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.0-alpha2"
 }
 

@@ -7,6 +7,7 @@ import com.nsikakthompson.contactappexample.injection.AppComponent;
 import com.nsikakthompson.contactappexample.injection.AppModule;
 import com.nsikakthompson.contactappexample.injection.DaggerAppComponent;
 
+
 /**
  * Created by Nsikak on 2/15/18.
  */

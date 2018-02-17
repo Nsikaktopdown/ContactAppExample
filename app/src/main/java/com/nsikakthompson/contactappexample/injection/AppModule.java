@@ -1,5 +1,6 @@
 package com.nsikakthompson.contactappexample.injection;
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
 
 import com.google.gson.FieldNamingPolicy;
@@ -9,6 +10,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.nsikakthompson.contactappexample.AppController;
 import com.nsikakthompson.contactappexample.BuildConfig;
 import com.nsikakthompson.contactappexample.api.ContactApiService;
+import com.nsikakthompson.contactappexample.data.PersonDatabase;
 import com.nsikakthompson.contactappexample.repo.ContactRepo;
 import com.nsikakthompson.contactappexample.repo.ContactRepoImpl;
 
@@ -87,11 +89,17 @@ public class AppModule {
     }
 
 
+    @Provides
+    @Singleton
+    PersonDatabase providesPersonDatabase(Context context) {
+        return Room.databaseBuilder(context.getApplicationContext(), PersonDatabase.class, "Contact_db").build();
+    }
+
 
     @Provides
     @Singleton
-    ContactRepo provideContactRepo(ContactApiService contactApiService){
-        return new ContactRepoImpl(contactApiService);
+    ContactRepo provideContactRepo(ContactApiService contactApiService, PersonDatabase personDatabase){
+        return new ContactRepoImpl(contactApiService, personDatabase);
     }
 
 }

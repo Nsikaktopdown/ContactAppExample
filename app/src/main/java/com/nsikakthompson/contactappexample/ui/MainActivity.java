@@ -15,6 +15,7 @@ import android.view.View;
 
 import com.nsikakthompson.contactappexample.AppController;
 import com.nsikakthompson.contactappexample.R;
+import com.nsikakthompson.contactappexample.data.PersonDatabase;
 import com.nsikakthompson.contactappexample.injection.AppFactory;
 import com.nsikakthompson.contactappexample.repo.ContactRepo;
 
@@ -24,12 +25,13 @@ import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 101;
     public static final String TAG = MainActivity.class.getSimpleName();
 
     MainAcivityViewmodel mainAcivityViewmodel;
     @Inject
     ContactRepo contactRepo;
+    @Inject
+    PersonDatabase personDatabase;
     private RecyclerAdapter contactAdapter;
     private RecyclerView recyclerView;
 

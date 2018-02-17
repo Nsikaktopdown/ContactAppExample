@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface ContactRepo
 {
-   void fetchContact();
+   void addContact();
 
     LiveData<List<Person>> getContact();
 }

@@ -66,9 +66,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
         Person item = contactList.get(position);
         holder.itemView.setTag(item);
-        holder.mContactName_txt.setText(item.getmContactName());
-        holder.mContactPhone_txt.setText(item.getmContactPhone());
-        Picasso.with(holder.mPhoto.getContext()).load(item.getmPhotoUrl()).into(holder.mPhoto);
+        holder.mContactName_txt.setText(item.getContactName());
+        holder.mContactPhone_txt.setText(item.getContactPhone());
+        Picasso.with(holder.mPhoto.getContext()).load(item.getPhotoUrl()).into(holder.mPhoto);
 
 
     }

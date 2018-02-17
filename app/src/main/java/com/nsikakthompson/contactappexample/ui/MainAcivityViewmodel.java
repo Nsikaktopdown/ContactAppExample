@@ -1,6 +1,7 @@
 package com.nsikakthompson.contactappexample.ui;
 
 import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
 import com.google.gson.Gson;
@@ -33,20 +34,30 @@ public class MainAcivityViewmodel extends ViewModel implements AppComponent.Inje
     OkHttpClient okHttpClient;
     @Inject
     ContactApiService contactApiService;
+    LiveData<List<Person>> person = new MutableLiveData<List<Person>>();
 
 
+    public  MainAcivityViewmodel(){
+
+
+    }
     @Override
     public void inject(AppComponent appComponent) {
         appComponent.inject(this);
-        contactRepo.fetchContact();
-
+        fetchContact();
+        person = contactRepo.getContact();
 
     }
+
 
     public LiveData<List<Person>> getContact() {
 
-        return contactRepo.getContact();
+        return person;
     }
 
+    public void fetchContact() {
+        contactRepo.addContact();
+
+    }
 
 }
